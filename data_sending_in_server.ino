@@ -12,7 +12,7 @@ void setup() {
   Serial.println(ssid);
 
   WiFi.begin(ssid, password);
-  while(WiFi.status() !=WL_CONNECTED)
+  while(WiFi.status() !=WL_CONNECTED) //Wifi connection
   {
     delay(500);
     Serial.print(".");
@@ -34,18 +34,18 @@ void loop() {
   Serial.println(host);
 
   WiFiClient client;
- const int httpPort= 80;
- if(!client.connect(host,httpPort))
+ const int httpPort= 80; //default port
+ if(!client.connect(host,httpPort)) //HTTP Connection
  {
   Serial.println("Connection failed");
   return;
  }
  int r=1000;
- String url ="/index.php?rfid="+ String(r);
+ String url ="/index.php?rfid="+ String(r); //Url which will insert data to database
  Serial.println("Requesting URLL  ");
  Serial.println(url);
 
- client.print(String("GET ") + url + " HTTP/1.0\r\n" +
+ client.print(String("GET ") + url + " HTTP/1.0\r\n" + //get request to the server
                "Host: " + host + "\r\n" + 
                "Connection: close\r\n\r\n");
 

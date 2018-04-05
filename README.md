@@ -9,6 +9,7 @@
 6. Set Board: NodeMCU 0.9 (ESP-12 Module)
 7. Set PORT Example: COM6
     If port doesn't appear then install CP201x driver
+
     Driver link: https://www.silabs.com/products/development-tools/software/usb-to-uart-bridge-vcp-drivers
 8. Setup your database and write php code. Example: Php and sql file added.
 9. Upload arduino code. 
